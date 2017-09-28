@@ -28,10 +28,10 @@ public class TestMain {
 		
 		
 		
-		/*DepartmentDao dao = DepartmentDao.getInstance();
+		DepartmentDao dao = DepartmentDao.getInstance();
 		showDepartmentList(dao);
 		
-		Department dept = new Department(6, "마케팅", 10);
+		/*Department dept = new Department(6, "마케팅", 10);
 		dao.insertDepartment(dept);
 		
 		showDepartmentList(dao);
@@ -55,7 +55,7 @@ public class TestMain {
 		showEmployeeList(daoE);
 		
 		
-		Employee upemp = new Employee(1003, "서현진", "사원", 1365, 1500000, 2);
+		/*	Employee upemp = new Employee(1003, "서현진", "사원", 1365, 1500000, 2);
 		daoE.updateEmployee(upemp);
 		showEmployeeList(daoE);
 		
@@ -68,7 +68,7 @@ public class TestMain {
 		daoE.deleteEmplyee(delemp);
 		showEmployeeList(daoE);
 		
-		daoE.selectEmployeeByNo(new Employee(2106));
+		daoE.selectEmployeeByNo(new Employee(2106));*/
 		
 		
 	}

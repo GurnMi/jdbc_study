@@ -22,14 +22,65 @@ public class DepartmentDao {
 	private ResultSet rs;
 	private Connection con;
 
-	private DepartmentDao() {
-		
-	}
+	private Object DepartmentDao;
+
+	
 
 	public static DepartmentDao getInstance() {
 		return instance;
 	}
 
+	
+	
+	/*public Object[][] selectDepartmentByAllUi() {
+		Object[][] lists = new Object[3][];
+
+		sql = "select deptno, deptname, floor from department";
+		con = DBCon.getInstance().getConn();
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int deptNo = rs.getInt("deptno");
+				String deptName = rs.getString("deptname");
+				int floor = rs.getInt("floor");
+				lists.add(new Department(deptNo, deptName, floor));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {[
+			jdbcUtill.close(rs);
+			jdbcUtill.close(pstmt);
+		}
+		return lists;
+	}*/
+	
+	public String[] deptname(){
+		String deptname[] = null;
+		
+		sql = "select deptname from department";
+		try {
+			pstmt = DBCon.getInstance().getConn().prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			deptname = new String[10];
+			int i=0;
+			while (rs.next()) {
+				deptname[i] = rs.getString(1);
+				System.out.println(deptname[i]);
+				i++;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			jdbcUtill.close(pstmt);
+		}	
+		return deptname;
+	}
+	
+	
 	public List<Department> selectDepartmentByAll() {
 		List<Department> lists = new ArrayList<>();
 
@@ -55,6 +106,8 @@ public class DepartmentDao {
 	}
 	
 	
+	
+	
 	public Department selectDepartmentByNo(Department dept){
 		Department department = null;
 	
@@ -76,8 +129,8 @@ public class DepartmentDao {
 			jdbcUtill.close(pstmt);
 		}
 		
+		return dept;
 		
-		return department;
 	}
 	
 	

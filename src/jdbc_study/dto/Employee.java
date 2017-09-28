@@ -63,7 +63,9 @@ public class Employee {
 				title, manager, salary, dno);
 	}
 	
-	
+	public Object[] toArray(){
+		return new Object[]{ empno, empname,title, manager, salary, dno};
+	}
 	
 	
 	
